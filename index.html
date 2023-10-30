@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head> 
+	
+	<meta charset="UTF-8">
+	<link rel = "stylesheet" type = "text/css" href = "css/styles.css"/>
+	<title>ABC Community College (ABCC) Pay Roll Applicaiton </title>
+</head>
+<body>
+	<div id="login_container">
+
+		<div id="header"> </div>
+
+		<div id="logoHolder">ABC Community College (ABCC) Pay Roll Applicaiton </div>
+
+		<div id="formHolder">
+
+			<form id="myForm" > 
+				<fieldset>
+					<div id="formHeader"></div>
+
+					<div class="labelHolder"> 
+						<label>Employee Number:</label>
+					</div>
+					<div class="formControl"> 
+						<input type="text"  name="Number" id="eNumber_id" required></br>
+					</div>
+
+					<div class="newLineForm"></div>
+
+					<div class="labelHolder"> 
+						<label>Employee Name</label>
+					</div>
+					<div class="formControl"> 
+						<input type="text"  name="Name" id="eName_id" required></br>
+					</div>
+
+					<div class="newLineForm"></div>
+
+					<div class="labelHolder"> 
+						<label>Department:</label>
+					</div>
+					<div class="formControl"> 
+						<input type="text"  name="Department" id="eDepartment_id" required></br>
+					</div>
+
+					<div class="newLineForm"></div>
+
+					<div class="labelHolder"> 
+						<label>Hours Work</label>
+					</div>
+					<div class="formControl">
+						<input type="text"  name="Hours" id="eHours_id" required></br>
+					</div>
+
+					<div class="newLineForm"></div>
+
+
+					<div class="labelHolder"> 
+						<label>Employee Code </label>
+					</div>
+					<div class="formControl"> 
+						
+						<select name="Code" id="eCode_id" class="custom-select">
+							<option value="none">Select an option</option>
+							<option value="l">Lecturer</option>
+							<option value="r">Regualar</option>
+							
+						</select>
+					</div>
+
+					
+					<div class="newLineForm"></div>
+					
+					<div id="qualificationDiv" class="hidden-div">
+						<div class="labelHolder"> 
+							<label>Lecturer's Qualification code</label>
+						</div>
+						<div class="formControl"> 
+							<!-- <input type="text"  name="Qual_code" id="eQual_code_id"></br> -->
+							<select name="Qual_code" id="eQual_code_id" class="custom-select">
+							<option value="empty">Select an option</option>
+							<option value="master">Master's</option>
+							<option value="bachelor">Bachelor's</option>
+							
+						</select>
+						</div>
+						<div class="newLineForm"></div>
+
+						<div class="labelHolder"> 
+							<label>Hourly Wage</label>
+						</div>
+						<div class="formControl"> 
+							<input type="text"  name="hourlyWage" id="eHourlyWage_id"></br>
+						</div>
+					</div>
+					
+
+
+					<div id="fixedSalaryDiv" class="hidden-div">
+						<div class="labelHolder"> 
+							<label>Regular  Work Fixed Salary</label>
+						</div>
+						<div class="formControl"> 
+							<input type="text"  name="RegFixSal" id="eRegFixSal_id" ></br>
+						</div>
+					</div>
+
+					
+
+					<div class="newLineForm"></div>
+
+					<div id="buttonHolder"> 
+						<input type="button" value="Generate Salary" id="genSal_id" onclick="calculatePayroll()">
+
+						<!-- <button type="submit">Submit</button> -->
+					</div>
+
+				</fieldset>
+
+			</form>	
+
+		</div>
+
+		<div id="footerFix"></div>
+		<div id="footer">
+			<div id="allRightReserved">
+				&copy; 2017 by ITEC245 Introduction to Scripting Languages <br/>
+				COSTAATT <br/>
+				All rights reserved
+			</div>
+		</div>
+
+	</div>
+	<script>
+
+	</script>
+	<script src="js/processPayRoll.js"> </script>
+</body>
+</html>
