@@ -9,20 +9,13 @@ function calculatePayroll() {
 	eNumber = parseInt(eNumber);
 	eName = document.getElementById("eName_id").value;
 	eDepartment = document.getElementById("eDepartment_id").value;
-
-
 	eHours = document.getElementById("eHours_id").value;
 	eHours = parseInt(eHours);
 	eRegFixSal = document.getElementById("eRegFixSal_id").value;
 	eRegFixSal = parseInt(eRegFixSal);
 	payRate = eRegFixSal/160;
-
-	
-	 
 	eHourlyWage = document.getElementById("eHourlyWage_id").value;
 	eHourlyWage = parseInt(eHourlyWage);
-	//let divs = document.querySelectorAll(".hidden-div");
-
 	eQual_code = document.getElementById("eQual_code_id").value;
 	let grossSalary = 0;
 
@@ -75,31 +68,28 @@ function calculatePayroll() {
 	{
 
 		if(grossSalary>=5000)
+		{
+			deduction = (((grossSalary-5000)*25)/100)+33;
+			netPay = grossSalary-deduction;
+			console.log("gross salary more than 5000");
+		}
+		else
+		{
+			if(grossSalary>499.99)
 			{
-				deduction = (((grossSalary-5000)*25)/100)+33;
+				deduction = 33
 				netPay = grossSalary-deduction;
-				console.log("gross salary more than 5000");
 			}
 			else
 			{
-				if(grossSalary>499.99)
-				{
-					deduction = 33
-					netPay = grossSalary-deduction;
-				}
-				else
-				{
-					deduction = 19.20;
-					netPay = grossSalary-deduction;
-				}
-				console.log("gross salary less than 5000");
+				deduction = 19.20;
+				netPay = grossSalary-deduction;
 			}
-		console.log(`emp number ${eNumber} emp name ${eName} deparmetn ${eDepartment} hours worked ${eHours}  gossSalry ${grossSalary} Deduction ${deduction} Net Pay ${netPay}`);
+			console.log("gross salary less than 5000");
+		}
+		alert(` ------- Employee Pay Slip -------- \n Employee Number : ${eNumber} \n Employee Name : ${eName} \n Department : ${eDepartment} \n Hours Worked : ${eHours} \n Gross Salary : ${grossSalary} \n Deductions : ${deduction} \n Net Pay : ${netPay}`);
 	}
 	
-
-
-
 }
 let eCode = document.getElementById("eCode_id");
 const qualificationDiv = document.getElementById("qualificationDiv");
@@ -124,7 +114,5 @@ eCode.addEventListener("change", function (){
 		qualificationDiv.style.display = "none";
 		fixedSalaryDiv.style.display = "none";
 	}
-
-
 
 });	
